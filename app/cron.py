@@ -13,8 +13,8 @@ API_URL = "https://api.dataplatform.knmi.nl/open-data"
 API_KEY = os.getenv('KNMI_API_KEY')
 
 DATASET_PRODUCT = int(os.getenv('DATA_PRODUCT'))
-DATASET_NAME = f"harmonie_arome_cy40_p{DATASET_PRODUCT}"
-DATASET_VERSION = "0.2"
+DATASET_NAME = f"harmonie_arome_cy43_p{DATASET_PRODUCT}"
+DATASET_VERSION = "1.0"
 
 HOUR_MAX = int(os.getenv('HOUR_MAX'))
 
@@ -23,10 +23,11 @@ DATA_DIR = Path(f'/data/dp{DATASET_PRODUCT}')
 
 def file_list():
     yesterday = (datetime.now() - timedelta(days=1)).strftime("%Y%m%d")
+    yesterday = "20240513"
 
     req = Request(
         f"{API_URL}/datasets/{DATASET_NAME}/versions/{DATASET_VERSION}/files?"
-        f"startAfterFilename=harm40_v1_p{DATASET_PRODUCT}_{yesterday}00.tar",
+        f"startAfterFilename=HARM43_V1_P{DATASET_PRODUCT}_{yesterday}00.tar",
         headers={"Authorization": API_KEY}
     )
     with urlopen(req) as list_files_response:
