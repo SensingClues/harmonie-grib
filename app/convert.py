@@ -42,6 +42,8 @@ def convert(tmpdirname: str, subfolder: str = None):
 
             # https://apps.ecmwf.int/codes/grib/format/grib1/centre/0/
             message['centre'] = 'kwbc'
+            message['subCentre'] = 0
+            message['table2Version'] = 1
 
             # TODO: include information on rotated lat/lon for DP2?
             # https://apps.ecmwf.int/codes/grib/format/grib1/ctable/6/
