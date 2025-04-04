@@ -35,7 +35,7 @@ We removed the extraction of other elements in the HARMONIE-model for simplicity
 ## Usage
 
 1. Get yourself an KNMI API key
-  - Currently, we use the one from Koen. It is set as `KNMI_API_KEY` in the repository's secrets. On deploy, it is passed to the container as an environment variable. If the key changes, change it in the secrets and run the pipeline.
+    - Currently, we use the one from Koen. It is set as `KNMI_API_KEY` in the repository's secrets. On deploy, it is passed to the container as an environment variable. If the key changes, change it in the secrets and run the pipeline.
 2. To build from GitHub:
     ```
     git clone git@github.com:ralphdewit/harmonie-grib.git
